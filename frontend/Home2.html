@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kulswamini Technical Institute</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .sidebar {
+      width: 260px;
+      background: #003554;
+      color: white;
+      padding: 2rem 1rem;
+      position: fixed;
+      top: 0;
+      
+      bottom: 0;
+      box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
+
+    .sidebar h2 {
+      font-size: 1.7rem;
+      margin-top:4px;
+      margin-bottom: 2rem;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #e18335;       /* Button background */
+  color: white;
+  text-decoration: none;
+  margin: 0.7rem 0;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar nav a:hover {
+  background-color: #e18335;
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
+    .sidebar nav a:hover {
+      background-color: #003554;
+    }
+
+    .main-content {
+      margin-left: 260px;
+      padding: 2rem;
+      background-color:#E9E3DF ;
+      animation: fadeIn 1s ease;
+    }
+
+    header {
+      text-align: center;
+      margin-top:0px;
+      background: #003554;
+      color: white;
+      padding: 2.5rem 1rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .auth-buttons a {
+      margin-left: 10px;
+      margin-bottom:2px;
+      padding: 8px 16px;
+      background: #e18335;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+      font-size: 0.7rem;
+    }
+
+    .auth-buttons a:hover {
+      background: #4e8de2;
+    }
+
+    .section-title {
+      color:#465C88;
+      margin-bottom: 1rem;
+     
+      font-size: 2rem;
+      border-bottom: 2px solid #4e8de2;
+      display: flex;
+      padding-bottom: 0.3rem;
+      text-decoration:none;
+    }
+    .section-title p{
+      font:bold;
+    }
+    .section-title a{
+      text-decoration:none;
+      text-decoration-color:none;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+      line-height: 1.8;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      background-color: #ffffff;
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    footer {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 3rem;
+    }
+    .backimage {
+  overflow: hidden;
+  width: 940px;
+  height: 450px; /* or any height you prefer */
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backimage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  display: block;
+
+}
+
+
+
+    .sec{
+      background: linear-gradient(to right, #E9E3DF, #465C88);
+      border: 2px solid #465C88;
+    }
+
+    .contact-card {
+      border-top: 2px dashed #ccc;
+      padding-top: 1.5rem;
+    }
+   .affiliation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#imgs1 {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+#pp {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <aside class="sidebar">
+    <h2>Navigation</h2>
+    <nav>
+      <a href="Home.html"><i class="fas fa-home"></i> Home Page</a>
+      <a href="Aboutus.html"><i class="fas fa-building"></i> About Us</a>
+      <a href="Contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="#eligibility"><i class="fas fa-check-circle"></i> Eligibility</a>
+      <a href="#classrooms"><i class="fas fa-chalkboard-teacher"></i> Classrooms</a>
+      <a href="Courses.html"><i class="fas fa-book"></i> Courses</a>
+      <a href="#practicals"><i class="fas fa-tools"></i> Practicals</a>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <header id="home">
+      <div class="auth-buttons">
+        <a href="Signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+        <a href="Login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+      </div>
+      <h1>Ashwamedh Bahuuddeshiya Samajik Sanstha</h1>
+      <div class="affiliation">
+    <img id="imgs1" src="msbsvet.jpg" alt="MSBSVET Logo">
+    <p id="pp">Affiliated by MSBSVET</p>
+  </div>
+    </header>
+    <div class="backimage">
+      <img src="Banner.jpeg"></img>
+    </div>
+
+    <section class="sec" id="about">
+      <h2 class="section-title"><a href="Aboutus.html">About Us</a></h2>
+      <p>Kulswamini Technical Institute offers professional training for Construction Supervisors, with practical-based learning and government job guidance.</p>
+    </section>
+
+    <section class="sec" id="courses">
+      <h2 class="section-title"><a href="Courses.html">Courses</a></h2>
+      <ul>
+        <li>Construction Supervisor[CS]</li>
+      </ul>
+    </section>
+
+    <section class="sec"id="eligibility">
+      <h2 class="section-title">Eligibility</h2>
+      <p>Applicants must have passed 10th or 12th standard.</p>
+    </section>
+
+    <section class="sec"id="classrooms">
+      <h2 class="section-title">Classrooms</h2>
+      <p>Our classrooms are equipped with modern teaching aids and a student-friendly environment for focused learning.</p>
+    </section>
+
+    <section class="sec" id="practicals">
+      <h2 class="section-title">Practicals</h2>
+      <p>We offer hands-on practical training essential for real-world construction site supervision and management.</p>
+    </section>
+
+    <section class="sec"id="exam">
+      <h2 class="section-title">Exam</h2>
+      <p>Regular internal assessments and final examinations are conducted to evaluate student progress.</p>
+    </section>
+
+    <section class="sec" id="professors">
+      <h2 class="section-title">Professors</h2>
+      <ul>
+        <li><strong>Nimbalkar Sir</strong> – Construction Expert & Lead Instructor</li>
+        <li><strong>Dr. Amar Nimbalkar</strong> – M.Com, M.Phil, Ph.D – Accounts & Commerce</li>
+      </ul>
+    </section>
+
+    <section class="sec" id="contact" class="contact-card">
+      <h2 class="section-title"><a href="Contact.html">Contact Us</a></h2>
+      <p><strong>Instructor:</strong> Nimbalkar Sir</p>
+      <p><strong>Location:</strong> Barshi Naka, Solapur</p>
+      <p><strong>Phone:</strong> 9767311105 / 9011972122</p>
+      <br>
+      <p><strong>For Commerce & Accounts:</strong></p>
+      <p><strong>Instructor:</strong> Dr. Amar Nimbalkar</p>
+      <p><strong>Phone:</strong> 9975778300 / 8856056984</p>
+    </section>
+
+
+    <footer>
+      <p>&copy;Kulswamini Technical Institute.</p>
+    </footer>
+  </div>
+</body>
+
+</html>

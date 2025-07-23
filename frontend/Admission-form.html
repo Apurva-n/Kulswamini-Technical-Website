@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admission Form - Kulswamini Technical Institute</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      padding: 40px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    form {
+      background: #fff;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .row {
+      display: flex;
+      gap: 20px;
+    }
+    .row > div {
+      flex: 1;
+    }
+    textarea {
+      height: 100px;
+    }
+    .declaration {
+      margin-top: 30px;
+      background: #f9f9f9;
+      padding: 15px;
+      border: 1px dashed #aaa;
+      font-size: 0.95rem;
+    }
+    .signature-box {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .signature-box div {
+      width: 45%;
+      text-align: center;
+    }
+    button {
+      margin-top: 30px;
+      padding: 10px 25px;
+      background: #2a5298;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1e3c72;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Admission Form - Kulswamini Technical Institute</h2>
+  <form>
+    <div class="row">
+      <div>
+        <label>Surname</label>
+        <input type="text" name="surname" />
+      </div>
+      <div>
+        <label>First Name</label>
+        <input type="text" name="firstname" />
+      </div>
+    </div>
+
+    <label>Father's Name</label>
+    <input type="text" name="fathername" />
+
+    <label>Date of Birth</label>
+    <input type="date" name="dob" />
+
+    <label>School / College</label>
+    <input type="text" name="school" />
+
+    <label>Residential Address</label>
+    <textarea name="address"></textarea>
+
+    <h3>Parent Information</h3>
+    <label>Father's Name</label>
+    <input type="text" name="parentname" />
+
+    <div class="row">
+      <div>
+        <label>Age</label>
+        <input type="number" name="parentage" />
+      </div>
+      <div>
+        <label>Occupation</label>
+        <input type="text" name="occupation" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label>Phone No.</label>
+        <input type="text" name="phone" />
+      </div>
+      <div>
+        <label>Mobile No.</label>
+        <input type="text" name="mobile" />
+      </div>
+    </div>
+
+    <h3>Family Member Details</h3>
+    <label>Relation, Name, Age, Education, MS-CIT</label>
+    <textarea name="familyinfo" placeholder="Brother - Raj Nimbalkar - 20 - 12th - Yes"></textarea>
+
+    <div class="declaration">
+      <strong>Declaration by the Student:</strong><br />
+      I solemnly affirm that all the information given in this admission form is true to the best of my knowledge and belief. I promise to attend classes punctually and complete my assignments regularly. I will follow all rules and respect my elders.
+    </div>
+
+    <div class="declaration">
+      <strong>Declaration by the Parent:</strong><br />
+      I affirm that I am enrolling my ward at Kulswamini Technical Institute. I understand that fees once paid are non-refundable. I agree to pay all fees on time and support discipline. I allow the Institute to publish my ward’s achievements for educational purposes.
+    </div>
+
+    <div class="signature-box">
+      <div>
+        <label>Signature of Student</label>
+        <br><br><br>
+      </div>
+      <div>
+        <label>Signature of Parent</label>
+        <br><br><br>
+      </div>
+    </div>
+
+    <button type="submit">Submit Form</button>
+  </form>
+
+</body>
+</html>
