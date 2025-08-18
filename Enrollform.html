@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Enrollment Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 650px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      animation: slideIn 0.6s ease;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #003366;
+      letter-spacing: 0.5px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      color: #222;
+      font-weight: 600;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      font-size: 1rem;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: #0073b7;
+      background-color: #fff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 115, 183, 0.3);
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      margin-top: 6px;
+    }
+
+    .radio-group label {
+      font-weight: 500;
+    }
+
+    .radio-group input {
+      margin-right: 6px;
+    }
+
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      background: linear-gradient(to right, #0073b7, #00b4db);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 179, 255, 0.3);
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #005f9e, #00a3c7);
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 650px) {
+      .form-container {
+        padding: 25px 20px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Student Enrollment Form</h2>
+    <form action="http://localhost:3000/enroll">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="e.g. Apurva Nimbalkar" required>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label>Gender</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Other"> Other</label>
+      </div>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <label for="phone">Mobile Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+
+      <label for="course">Course Applied</label>
+      <select id="course" name="course" required>
+        <option value="" disabled selected>Select your course</option>
+        <option value="cs">Construction Supervisor [CS]</option>
+        <!-- Add more courses if needed -->
+      </select>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+  <script src="Enrollform.js"></script>
+</body>
+</html>
