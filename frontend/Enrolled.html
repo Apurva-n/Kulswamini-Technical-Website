@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Construction Supervisor Course - Kulswamini Technical Institute</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background: linear-gradient(to right, #e3ecff, #ffffff);
+      color: #333;
+    }
+
+    .sidebar {
+      width: 260px;
+      background: linear-gradient(to bottom, #1e3c72, #2a5298);
+      color: white;
+      padding: 2rem 1rem;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
+
+    .sidebar h2 {
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .sidebar nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+      margin: 0.7rem 0;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .sidebar nav a:hover {
+      background-color: #4e8de2;
+    }
+
+    .main-content {
+      margin-left: 260px;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .intro-header {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      padding: 10px 5px;
+      text-align: center;
+      border-radius: 14px;
+      margin: 0 auto 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      height:9%;
+    }
+    
+    .intro-header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .intro-header p {
+      font-size: 1em;
+      margin-top: 10px;
+    }
+
+    header.course-header {
+      position: relative;
+      height: 450px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    header.course-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('CS.jpg') no-repeat center center;
+      background-size: cover;
+      filter: blur(8px);
+      z-index: 0;
+      transform: scale(1.1);
+    }
+
+    header.course-header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+      border-radius: 16px;
+    }
+
+    header.course-header h1,
+header.course-header p,
+header.course-header .enroll-btn {
+  z-index: 2;
+  position: relative;
+}
+
+
+    header.course-header h1 {
+      font-size: 2.6em;
+      margin-bottom: 20px;
+    }
+
+    header.course-header .enroll-btn {
+      background: white;
+      color: #1e3c72;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    header.course-header .enroll-btn:hover {
+      background: #eeeeee;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 40px 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .course-card {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .course-card p {
+      margin: 12px 0;
+      font-size: 1.1rem;
+    }
+
+    .enroll-btn {
+      background: linear-gradient(to right, #0059b3, #007bff);
+      color: white;
+      padding: 14px 35px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 89, 179, 0.3);
+      transition: background 0.3s ease, transform 0.2s;
+      margin-top: 20px;
+    }
+
+    .enroll-btn:hover {
+      background: linear-gradient(to right, #004080, #0059b3);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      border-radius: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 1rem;
+      }
+      header.course-header h3 {
+  z-index: 2;
+  position: relative;
+  color: #fff; 
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+
+
+      .intro-header {
+        width: 100%;
+
+        margin: 0 auto 20px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar">
+    <h2>Navigation</h2>
+    <nav>
+      <a href="Home.html"><i class="fas fa-home"></i> Home Page</a>
+      <a href="Aboutus.html"><i class="fas fa-building"></i> About Us</a>
+      <a href="Contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="#eligibility"><i class="fas fa-check-circle"></i> Eligibility</a>
+      <a href="#classrooms"><i class="fas fa-chalkboard-teacher"></i> Classrooms</a>
+      <a href="Courses.html"><i class="fas fa-book"></i> Courses</a>
+      <a href="#practicals"><i class="fas fa-tools"></i> Practicals</a>
+      <a href="#exam"><i class="fas fa-pen"></i> Exam</a>
+      <a href="#professors"><i class="fas fa-user-tie"></i> Professors</a>
+      <a href="Aboutus.html#pamphlet"><i class="fas fa-images"></i> Pamphlet Gallery</a>
+    </nav>
+  </aside>
+
+ 
+  <div class="main-content">
+  
+    <div class="intro-header">
+      <h1>Our Courses</h1>
+      <p>Explore the wide range of programs we offer at Kulswamini Technical Institute.</p>
+    </div>
+
+   <header class="course-header">
+  <h1>Construction Supervisor</h1>
+  <p>Learn the skills needed to lead and manage construction projects effectively.</p>
+  
+  
+  <h3 style="z-index: 2; margin-top:10px;position: relative; color: #0f0; margin: 10px 0;">
+    You have successfully enrolled for this course!!
+  </h3>
+  
+  <button class="enroll-btn" onclick="cancelEnrollment()">Cancel Enrollment</button>
+</header>
+
+
+<script>
+  function cancelEnrollment() {
+    const email = prompt("Enter your registered email to cancel enrollment:");
+
+    if (!email) return;
+
+    fetch('/cancel-enrollment', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+    .then(response => response.text())
+    .then(data => alert(data))
+    .catch(err => console.error('Error:', err));
+  }
+</script>
+
+      
+    </header>
+
+    <div class="course-card">
+  <h2>About the Course</h2>
+  <p>
+    Our <strong>Construction Supervisor Training</strong> is a <strong>one-year</strong> comprehensive program designed
+    to equip students with the skills and knowledge required to manage and supervise construction projects efficiently.
+  </p>
+  <p>
+    The course blends theoretical knowledge with hands-on experience, making it perfect for individuals aiming to become
+    professional and reliable site supervisors in the booming construction industry.
+  </p>
+
+  <h3 style="margin-top: 25px;">What You'll Learn</h3>
+  <ul style="text-align: left; margin-left: 20px; line-height: 1.8;">
+    <li>Basics of Civil Engineering and Construction Materials</li>
+    <li>Site Safety Regulations and Labor Management</li>
+    <li>Construction Planning and Cost Estimation</li>
+  </ul>
+
+  <hr style="margin: 25px 0; border: 0; border-top: 1px solid #ccc;">
+
+  <div style="text-align: left; margin-left: 20px; font-size: 1.05rem;">
+    
+  </div>
+
+    <footer>
+      <p>&copy; 2010 Kulswamini Technical Institute</p>
+    </footer>
+  </div>
+  <Script scr="Courses.js"></Script>
+</body>
+</html>
